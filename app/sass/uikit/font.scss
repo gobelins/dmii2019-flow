@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-Bold.otf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-Light.otf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-LightIt.otf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-Regular.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-It.otf') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-Super.otf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'akzidenz-grotesk_pro';
+    src: url('../fonts/AkzidenzGroteskPro-SuperItalic.otf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'AeonisLTPro';
+    src: url('../fonts/AeonisLTPro-HeavyExtd.otf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UniversLTStd';
+    src: url('../fonts/UniversLTStd-XBlackEx.otf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BodoniLT';
+    src: url('../fonts/BodoniLT.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'NoeDisplay';
+    src: url('../fonts/NoeDisplay-RegularItalic.otf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+body {
+  color: white;
+}

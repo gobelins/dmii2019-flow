@@ -1,0 +1,653 @@
+$clip-height: 3.3vw;
+@import "uikit/font";
+@import "video";
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: 'akzidenz-grotesk_pro';
+
+  canvas {
+    z-index: 4;
+  }
+
+  .video {
+    z-index: 3;
+  }
+
+  &.isExpe {
+    .invisible {
+      opacity: 0;
+      transition: 1s ease;
+    }
+
+    .container {
+      .nav {
+        position: fixed;
+        padding: 0px;
+        top: 50px;
+        left: 50px;
+        z-index: 10;
+
+        li {
+          a {
+            color: #fff;
+            opacity: .30;
+          }
+        }
+      }
+
+      .block-end {
+        position: fixed;
+        bottom: 50px;
+        right: 44px;
+        z-index: 5;
+
+        a {
+          font-size: 17px;
+          letter-spacing: 1.6px;
+          font-family: 'akzidenz-grotesk_pro';
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #ffffff;
+        }
+
+        img {
+          width: 14px;
+        }
+      }
+
+      .info-artist {
+        position: fixed;
+        right: 50px;
+        top: 50px;
+        z-index: 5;
+        list-style-type: none;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+
+        li {
+          margin: 0;
+          padding: 0;
+        }
+
+        &:after {
+          content: '';
+          width: 31px;
+          height: 1px;
+          background: #ffffff;
+          position: absolute;
+          display: block;
+          right: 0px;
+          bottom: -22px;
+        }
+
+        &:before {
+          content: '';
+          width: 15px;
+          height: 1px;
+          background: #ffffff;
+          position: absolute;
+          display: block;
+          right: 0px;
+          bottom: -32px;
+        }
+
+        .name {
+          font-family: 'akzidenz-grotesk_pro';
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 30px;
+          letter-spacing: 1px;
+        }
+
+        .artist {
+          font-family: 'akzidenz-grotesk_pro';
+          font-size: 28px;
+          letter-spacing: 0.23px;
+          font-weight: 100;
+        }
+      }
+
+      .expend-block {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        z-index: 5;
+
+        img {
+          width: 32px;
+        }
+      }
+    }
+  }
+
+  .presplash {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: -3;
+    opacity: 0;
+    -webkit-animation: longfadeOut 6s linear;
+    animation: longfadeOut 6s linear;
+  }
+  .splash {
+    position: absolute;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: -3;
+    -webkit-animation: fadeInOut 10s ease-in-out;
+    animation: fadeInOut 10s ease-in-out;
+    animation-delay: 3s;
+    background-image: url('./../img/flow.png');
+    background-size: cover;
+    .preface-title {
+      width: 290px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-left: 44px;
+    }
+    .preface-container {
+      text-align: right;
+      position: absolute;
+      right: 44px;
+      bottom: 0;
+      .preface-img {
+        width: 75px;
+      }
+      .preface-text {
+        font-family: 'akzidenz-grotesk_pro';
+        font-size: 32px;
+        font-weight: 300;
+      }
+    }
+  }
+  #end {
+    overflow-x: hidden;
+
+    .nav {
+      li {
+        a {
+          color: #000;
+          opacity: 1;
+        }
+        .nav-icon {
+        }
+      }
+    } 
+  }
+  .container {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .nav {
+      position: absolute;
+      margin: 0;
+      list-style-type: none;
+      padding: 50px 0 0 50px;
+      z-index: 3;
+
+      li {
+        float: left;
+        padding: 0;
+        .nav-logo {
+          width: 95px;
+          margin-right: 50px;
+        }
+        a {
+          font-size: 1vw;
+          line-height: 1vw;
+          color: #fff;
+          opacity: 0.4;
+          padding-right: 13px;
+          float: left;
+          text-decoration: none;
+        }
+        .nav-icon {
+          padding-right: 13px;
+          width: 18px;
+          height: 10px;
+          opacity: 0.5;
+        }
+        .highlight {
+          color: #fff;
+        }
+      }
+    }
+    #home {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: black;
+      overflow: hidden;
+      z-index: 1;
+      transition: background-color 0.5s;
+      .words-container {
+        width: 100vw;
+        margin: 0 auto;
+        padding: 80px 0;
+        font-size: 3.5vw;
+        font-weight: 900;
+        text-transform: uppercase;
+        // Sort out nasty text fuzz
+        transform: translate3d(0,0,0);
+        -webkit-font-smoothing: antialiased;
+        list-style: none;
+        .words-line {
+          display: flex;
+          height: $clip-height;
+          position: relative;
+          margin: $clip-height+0.05vw 0;
+          // Change the perspective of each alternating line
+          transform: skew(0deg, -24deg) scaleY(1.33333);
+          p {
+            height: 50px;
+            padding: 0 13vw 0 3vw;
+            transition: all .4s ease-in-out;
+            transform: translate3d(0, 0, 0);
+            vertical-align: top;
+          }
+          p::after {
+            display: block;
+            position: absolute;
+            top: 2.3vw;
+            right: 0px;
+            content: '';
+            width: 10vw;
+            height: 3%;
+            background-color: #ffffff;
+          }
+          .orelsan:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s;
+          }
+          .francois:hover {
+            color: #FE858E;
+            transition: color 0.5s, font-family 1s;
+          }
+          .fishbach:hover {
+            color: #1C363D;
+            transition: color 0.5s, font-family 1s;
+          }
+          .riles:hover {
+            color: #2B1E00;
+            transition: color 0.5s, font-family 1s;
+          }
+          .kery:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s;
+          }
+          .mademoisellek:hover {
+            color: #EE7E82;
+            transition: color 0.5s, font-family 1s;
+          }
+          .jeanne:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s;
+          }
+          .sanseverino:hover {
+            color: #F2E8D6;
+            transition: color 0.5s, font-family 1s;
+          }
+          .petitbiscuit:hover {
+            color: #0A0645;
+            transition: color 0.5s, font-family 1s;
+          }
+        }
+      }
+      .notice-container {
+        position: absolute;
+        right: 50px;
+        bottom: 48px;
+        .notice-text {
+          opacity: 0.8;
+          font-size: 0.9vw;
+          text-transform: uppercase;
+          display: inline-block;
+          margin: 0 21px 0 0;
+          letter-spacing: 0.1vw;
+        }
+        .notice-img {
+          width: 10px;
+          display: inline-block;
+        }
+      }
+    }
+    #instruction {
+      opacity: 0;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0,0,0, 0.9);
+      z-index: -10;
+      .instruction-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 9.8vw;
+        .instruction-text {
+          font-weight: 300;
+          font-size: 3vw;
+        }
+        .instruction-button {
+          display: inline-block;
+          border-bottom: 1px solid white;
+          a {
+            text-transform: uppercase;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            color: white;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0;
+            text-decoration: none;
+          }
+          a:hover {
+            font-style: italic;
+          }
+          img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw;
+          }
+        }
+      }
+    }
+    #dorica {
+      color: black;
+      height: 100vh;
+      width: 100vw;
+      .dorica-words-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+        display: flex;
+        li {
+          margin-top: 140px;
+          float: left;
+          margin-right: 40px;
+          transform: skew(0deg, -9.5deg);
+          p {
+            font-weight: 900;
+            font-style: normal;
+            font-size: 6.6vw;
+            text-transform: uppercase;
+            margin-bottom: 80px;
+          }
+        }
+      }
+      .dorica-resume {
+        margin-left: 9.8vw;
+        p {
+          font-size: 3vw;
+          font-weight: 300;
+        }
+        .restart-button {
+          display: inline-block;
+          border-bottom: 1px solid black;
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0;
+          }
+          a:hover {
+            font-style: italic;
+          }
+          img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw;
+          }
+        }
+      }
+      .seemore-button {
+        position: absolute;
+        right: 50px;
+        bottom: 48px;
+        z-index: 2;
+        a {
+          opacity: 0.8;
+          font-size: 0.9vw;
+          text-transform: uppercase;
+          text-decoration: none;
+          display: inline-block;
+          color: white;
+          margin: 0 21px 0 0;
+          letter-spacing: 0.1vw;
+        }
+        img {
+          width: 10px;
+          display: inline-block;
+        }
+      }
+    }
+    #artists-list {
+      .artist {
+        background-color: black;
+        height: 33vw;
+        transform: skew(0deg, -13deg) translateY(-10%);
+        overflow: hidden;
+        margin-bottom: 5px;
+        .artist-name {
+          font-size: 10vw;
+          font-weight: 900;
+          margin-left: 9.8vw;
+          margin-bottom: 1vw;
+          margin-top: 5vw;
+          span {
+            font-size: 2.5vw;
+          }
+        }
+        .artist-info {
+          list-style: none;
+          display: flex;
+          text-align: right;
+          float: right;
+          padding-right: 9.8vw;
+          .artist-info-each {
+            margin-left: 7vw;
+            .artist-details {
+              list-style: none;
+              .artist-date {
+                p {
+                  font-weight: 900;
+                  font-size: 1.8vw;
+                  margin: 0;
+                }
+              }
+              .artist-place {
+                p{
+                  font-weight: 300;
+                  font-size: 1.2vw;
+                }
+
+              }
+              .artist-ticket {
+                padding-bottom: 5px;
+                border-bottom: 0.5px solid white;
+                display: inline-block;
+                a {
+                  font-size: 0.8vw;
+                  font-weight: 900;
+                  letter-spacing: 0.1vw;
+                  text-transform: uppercase;
+                  text-decoration: none;
+                  color: white;
+                }
+                img {
+                  padding-left: 5px;
+                  width: 0.8vw;
+                }
+              }
+            }
+          }
+        }
+      }
+      .discover-button {
+        bottom: 8vw;
+        right: 2.5vw;
+        display: inline-block;
+        border-bottom: 1px solid black;
+        position: relative;
+        float: right;
+        z-index: 2;
+        a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0;
+        }
+        img {
+          padding-left: 15px;
+          margin-top: 22px;
+          width: 0.8vw;
+        }
+      }
+    }
+    #producer {
+      color: black;
+      margin-top: 16vw;
+      margin-bottom: 8vw;
+      .producer-info {
+        margin-left: 9.8vw;
+        p {
+          font-size: 3vw;
+          font-weight: 300;
+        }
+        .knowmore-button {
+          display: inline-block;
+          border-bottom: 1px solid black;
+          a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0;
+          }
+          a:hover {
+            font-style: italic;
+          }
+          img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw;
+          }
+        }
+      }
+    }
+    #credits {
+      color: black;
+      background-color: #F2F2F2;
+      overflow: hidden;
+      position: relative;
+      height: 46vh;
+      .credits-list {
+        list-style: none;
+        margin-top: 109px;
+        padding: 0;
+        .credits-element {
+          display: inline-flex;
+          .credits-sublist {
+            padding: 0;
+            list-style: none;
+            li{
+              margin-left: 9.8vw;
+            }
+            .credits-title {
+              p {
+                font-size: 2vw;
+                font-weight: 900
+              }
+            }
+            .credits-name {
+              p {
+                text-transform: uppercase;
+                letter-spacing: 0.1vw;
+                font-size: 1vw;
+              }
+            }
+          }
+        }
+        .credits-logos {
+          position: absolute;
+          bottom: 1.8vh;
+          .credits-imagelist {
+            list-style: none;
+            padding-left: 9.8vw;
+            li {
+              display: inline-flex;
+              margin-right: 4vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes longfadeOut {
+  0% {
+    opacity: 1;
+    z-index: 6;
+  }
+  16% {
+    opacity: 1;
+  }
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 6;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    z-index: 6;
+  }
+  10% {
+    opacity: 1;
+  }
+  94% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: 6;
+  }
+}
+@keyframes fastfadeIn {
+  0% {
+    opacity: 0;
+  }
+  16% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
