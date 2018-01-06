@@ -1,0 +1,566 @@
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-Bold.otf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-Light.otf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-LightIt.otf") format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-Regular.otf") format("woff2");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-It.otf") format("woff2");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-Super.otf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'akzidenz-grotesk_pro';
+  src: url("../fonts/AkzidenzGroteskPro-SuperItalic.otf") format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'AeonisLTPro';
+  src: url("../fonts/AeonisLTPro-HeavyExtd.otf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'UniversLTStd';
+  src: url("../fonts/UniversLTStd-XBlackEx.otf") format("truetype");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'BodoniLT';
+  src: url("../fonts/BodoniLT.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'NoeDisplay';
+  src: url("../fonts/NoeDisplay-RegularItalic.otf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+body {
+  color: white; }
+
+.video {
+  position: absolute;
+  z-index: 2; }
+
+body.isExpe {
+  overflow: hidden; }
+
+body {
+  margin: 0;
+  display: flex;
+  font-family: 'akzidenz-grotesk_pro'; }
+  body canvas {
+    z-index: 4; }
+  body .video {
+    z-index: 3; }
+  body.isExpe .invisible {
+    opacity: 0;
+    transition: 1s ease; }
+  body.isExpe .container .nav {
+    position: fixed;
+    padding: 0px;
+    top: 50px;
+    left: 50px;
+    z-index: 10; }
+    body.isExpe .container .nav li a {
+      color: #fff;
+      opacity: .30; }
+  body.isExpe .container .block-end {
+    position: fixed;
+    bottom: 50px;
+    right: 44px;
+    z-index: 5; }
+    body.isExpe .container .block-end a {
+      font-size: 17px;
+      letter-spacing: 1.6px;
+      font-family: 'akzidenz-grotesk_pro';
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #ffffff; }
+    body.isExpe .container .block-end img {
+      width: 14px; }
+  body.isExpe .container .info-artist {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    z-index: 5;
+    list-style-type: none;
+    text-align: right;
+    margin: 0;
+    padding: 0; }
+    body.isExpe .container .info-artist li {
+      margin: 0;
+      padding: 0; }
+    body.isExpe .container .info-artist:after {
+      content: '';
+      width: 31px;
+      height: 1px;
+      background: #ffffff;
+      position: absolute;
+      display: block;
+      right: 0px;
+      bottom: -22px; }
+    body.isExpe .container .info-artist:before {
+      content: '';
+      width: 15px;
+      height: 1px;
+      background: #ffffff;
+      position: absolute;
+      display: block;
+      right: 0px;
+      bottom: -32px; }
+    body.isExpe .container .info-artist .name {
+      font-family: 'akzidenz-grotesk_pro';
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 30px;
+      letter-spacing: 1px; }
+    body.isExpe .container .info-artist .artist {
+      font-family: 'akzidenz-grotesk_pro';
+      font-size: 28px;
+      letter-spacing: 0.23px;
+      font-weight: 100; }
+  body.isExpe .container .expend-block {
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    z-index: 5; }
+    body.isExpe .container .expend-block img {
+      width: 32px; }
+  body .presplash {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    z-index: -3;
+    opacity: 0;
+    -webkit-animation: longfadeOut 6s linear;
+    animation: longfadeOut 6s linear; }
+  body .splash {
+    position: absolute;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: -3;
+    -webkit-animation: fadeInOut 10s ease-in-out;
+    animation: fadeInOut 10s ease-in-out;
+    animation-delay: 3s;
+    background-image: url("./../img/flow.png");
+    background-size: cover; }
+    body .splash .preface-title {
+      width: 290px;
+      font-size: 28px;
+      font-weight: bold;
+      margin-left: 44px; }
+    body .splash .preface-container {
+      text-align: right;
+      position: absolute;
+      right: 44px;
+      bottom: 0; }
+      body .splash .preface-container .preface-img {
+        width: 75px; }
+      body .splash .preface-container .preface-text {
+        font-family: 'akzidenz-grotesk_pro';
+        font-size: 32px;
+        font-weight: 300; }
+  body #end {
+    overflow-x: hidden; }
+    body #end .nav li a {
+      color: #000;
+      opacity: 1; }
+  body .container {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative; }
+    body .container .nav {
+      position: absolute;
+      margin: 0;
+      list-style-type: none;
+      padding: 50px 0 0 50px;
+      z-index: 3; }
+      body .container .nav li {
+        float: left;
+        padding: 0; }
+        body .container .nav li .nav-logo {
+          width: 95px;
+          margin-right: 50px; }
+        body .container .nav li a {
+          font-size: 1vw;
+          line-height: 1vw;
+          color: #fff;
+          opacity: 0.4;
+          padding-right: 13px;
+          float: left;
+          text-decoration: none; }
+        body .container .nav li .nav-icon {
+          padding-right: 13px;
+          width: 18px;
+          height: 10px;
+          opacity: 0.5; }
+        body .container .nav li .highlight {
+          color: #fff; }
+    body .container #home {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-color: black;
+      overflow: hidden;
+      z-index: 1;
+      transition: background-color 0.5s; }
+      body .container #home .words-container {
+        width: 100vw;
+        margin: 0 auto;
+        padding: 80px 0;
+        font-size: 3.5vw;
+        font-weight: 900;
+        text-transform: uppercase;
+        transform: translate3d(0, 0, 0);
+        -webkit-font-smoothing: antialiased;
+        list-style: none; }
+        body .container #home .words-container .words-line {
+          display: flex;
+          height: 3.3vw;
+          position: relative;
+          margin: 3.35vw 0;
+          transform: skew(0deg, -24deg) scaleY(1.33333); }
+          body .container #home .words-container .words-line p {
+            height: 50px;
+            padding: 0 13vw 0 3vw;
+            transition: all .4s ease-in-out;
+            transform: translate3d(0, 0, 0);
+            vertical-align: top; }
+          body .container #home .words-container .words-line p::after {
+            display: block;
+            position: absolute;
+            top: 2.3vw;
+            right: 0px;
+            content: '';
+            width: 10vw;
+            height: 3%;
+            background-color: #ffffff; }
+          body .container #home .words-container .words-line .orelsan:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .francois:hover {
+            color: #FE858E;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .fishbach:hover {
+            color: #1C363D;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .riles:hover {
+            color: #2B1E00;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .kery:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .mademoisellek:hover {
+            color: #EE7E82;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .jeanne:hover {
+            color: #000;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .sanseverino:hover {
+            color: #F2E8D6;
+            transition: color 0.5s, font-family 1s; }
+          body .container #home .words-container .words-line .petitbiscuit:hover {
+            color: #0A0645;
+            transition: color 0.5s, font-family 1s; }
+      body .container #home .notice-container {
+        position: absolute;
+        right: 50px;
+        bottom: 48px; }
+        body .container #home .notice-container .notice-text {
+          opacity: 0.8;
+          font-size: 0.9vw;
+          text-transform: uppercase;
+          display: inline-block;
+          margin: 0 21px 0 0;
+          letter-spacing: 0.1vw; }
+        body .container #home .notice-container .notice-img {
+          width: 10px;
+          display: inline-block; }
+    body .container #instruction {
+      opacity: 0;
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: -10; }
+      body .container #instruction .instruction-container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 9.8vw; }
+        body .container #instruction .instruction-container .instruction-text {
+          font-weight: 300;
+          font-size: 3vw; }
+        body .container #instruction .instruction-container .instruction-button {
+          display: inline-block;
+          border-bottom: 1px solid white; }
+          body .container #instruction .instruction-container .instruction-button a {
+            text-transform: uppercase;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            color: white;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0;
+            text-decoration: none; }
+          body .container #instruction .instruction-container .instruction-button a:hover {
+            font-style: italic; }
+          body .container #instruction .instruction-container .instruction-button img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw; }
+    body .container #dorica {
+      color: black;
+      height: 100vh;
+      width: 100vw; }
+      body .container #dorica .dorica-words-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+        display: flex; }
+        body .container #dorica .dorica-words-list li {
+          margin-top: 140px;
+          float: left;
+          margin-right: 40px;
+          transform: skew(0deg, -9.5deg); }
+          body .container #dorica .dorica-words-list li p {
+            font-weight: 900;
+            font-style: normal;
+            font-size: 6.6vw;
+            text-transform: uppercase;
+            margin-bottom: 80px; }
+      body .container #dorica .dorica-resume {
+        margin-left: 9.8vw; }
+        body .container #dorica .dorica-resume p {
+          font-size: 3vw;
+          font-weight: 300; }
+        body .container #dorica .dorica-resume .restart-button {
+          display: inline-block;
+          border-bottom: 1px solid black; }
+          body .container #dorica .dorica-resume .restart-button a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0; }
+          body .container #dorica .dorica-resume .restart-button a:hover {
+            font-style: italic; }
+          body .container #dorica .dorica-resume .restart-button img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw; }
+      body .container #dorica .seemore-button {
+        position: absolute;
+        right: 50px;
+        bottom: 48px;
+        z-index: 2; }
+        body .container #dorica .seemore-button a {
+          opacity: 0.8;
+          font-size: 0.9vw;
+          text-transform: uppercase;
+          text-decoration: none;
+          display: inline-block;
+          color: white;
+          margin: 0 21px 0 0;
+          letter-spacing: 0.1vw; }
+        body .container #dorica .seemore-button img {
+          width: 10px;
+          display: inline-block; }
+    body .container #artists-list .artist {
+      background-color: black;
+      height: 33vw;
+      transform: skew(0deg, -13deg) translateY(-10%);
+      overflow: hidden;
+      margin-bottom: 5px; }
+      body .container #artists-list .artist .artist-name {
+        font-size: 10vw;
+        font-weight: 900;
+        margin-left: 9.8vw;
+        margin-bottom: 1vw;
+        margin-top: 5vw; }
+        body .container #artists-list .artist .artist-name span {
+          font-size: 2.5vw; }
+      body .container #artists-list .artist .artist-info {
+        list-style: none;
+        display: flex;
+        text-align: right;
+        float: right;
+        padding-right: 9.8vw; }
+        body .container #artists-list .artist .artist-info .artist-info-each {
+          margin-left: 7vw; }
+          body .container #artists-list .artist .artist-info .artist-info-each .artist-details {
+            list-style: none; }
+            body .container #artists-list .artist .artist-info .artist-info-each .artist-details .artist-date p {
+              font-weight: 900;
+              font-size: 1.8vw;
+              margin: 0; }
+            body .container #artists-list .artist .artist-info .artist-info-each .artist-details .artist-place p {
+              font-weight: 300;
+              font-size: 1.2vw; }
+            body .container #artists-list .artist .artist-info .artist-info-each .artist-details .artist-ticket {
+              padding-bottom: 5px;
+              border-bottom: 0.5px solid white;
+              display: inline-block; }
+              body .container #artists-list .artist .artist-info .artist-info-each .artist-details .artist-ticket a {
+                font-size: 0.8vw;
+                font-weight: 900;
+                letter-spacing: 0.1vw;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: white; }
+              body .container #artists-list .artist .artist-info .artist-info-each .artist-details .artist-ticket img {
+                padding-left: 5px;
+                width: 0.8vw; }
+    body .container #artists-list .discover-button {
+      bottom: 8vw;
+      right: 2.5vw;
+      display: inline-block;
+      border-bottom: 1px solid black;
+      position: relative;
+      float: right;
+      z-index: 2; }
+      body .container #artists-list .discover-button a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: black;
+        font-size: 0.9vw;
+        opacity: 0.8;
+        letter-spacing: 0.1vw;
+        float: left;
+        margin: 18px 0 18px 0; }
+      body .container #artists-list .discover-button img {
+        padding-left: 15px;
+        margin-top: 22px;
+        width: 0.8vw; }
+    body .container #producer {
+      color: black;
+      margin-top: 16vw;
+      margin-bottom: 8vw; }
+      body .container #producer .producer-info {
+        margin-left: 9.8vw; }
+        body .container #producer .producer-info p {
+          font-size: 3vw;
+          font-weight: 300; }
+        body .container #producer .producer-info .knowmore-button {
+          display: inline-block;
+          border-bottom: 1px solid black; }
+          body .container #producer .producer-info .knowmore-button a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: black;
+            font-size: 0.9vw;
+            opacity: 0.8;
+            letter-spacing: 0.1vw;
+            float: left;
+            margin: 18px 0 18px 0; }
+          body .container #producer .producer-info .knowmore-button a:hover {
+            font-style: italic; }
+          body .container #producer .producer-info .knowmore-button img {
+            padding-left: 15px;
+            margin-top: 22px;
+            width: 0.8vw; }
+    body .container #credits {
+      color: black;
+      background-color: #F2F2F2;
+      overflow: hidden;
+      position: relative;
+      height: 46vh; }
+      body .container #credits .credits-list {
+        list-style: none;
+        margin-top: 109px;
+        padding: 0; }
+        body .container #credits .credits-list .credits-element {
+          display: inline-flex; }
+          body .container #credits .credits-list .credits-element .credits-sublist {
+            padding: 0;
+            list-style: none; }
+            body .container #credits .credits-list .credits-element .credits-sublist li {
+              margin-left: 9.8vw; }
+            body .container #credits .credits-list .credits-element .credits-sublist .credits-title p {
+              font-size: 2vw;
+              font-weight: 900; }
+            body .container #credits .credits-list .credits-element .credits-sublist .credits-name p {
+              text-transform: uppercase;
+              letter-spacing: 0.1vw;
+              font-size: 1vw; }
+        body .container #credits .credits-list .credits-logos {
+          position: absolute;
+          bottom: 1.8vh; }
+          body .container #credits .credits-list .credits-logos .credits-imagelist {
+            list-style: none;
+            padding-left: 9.8vw; }
+            body .container #credits .credits-list .credits-logos .credits-imagelist li {
+              display: inline-flex;
+              margin-right: 4vw; }
+
+@keyframes longfadeOut {
+  0% {
+    opacity: 1;
+    z-index: 6; }
+  16% {
+    opacity: 1; }
+  84% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    z-index: 6; } }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    z-index: 6; }
+  10% {
+    opacity: 1; }
+  94% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    z-index: 6; } }
+
+@keyframes fastfadeIn {
+  0% {
+    opacity: 0; }
+  16% {
+    opacity: 0; }
+  95% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }

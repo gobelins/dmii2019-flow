@@ -7,5 +7,4 @@
 .idea/
 *.iml
 node_modules
-app/css/
 .DS_Store
