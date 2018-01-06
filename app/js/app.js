@@ -1,11 +1,11 @@
-import Scene from '../../class/scene.js';
+experience_kerryjames.htmlimport Scene from '../../class/scene.js';
 import * as THREE from 'three';
 import { TweenLite } from 'gsap';
 import $ from 'jquery';
 window.THREE = THREE
 
 if($('body').hasClass('isExpe')) {
-    var artistName = "orelsan"; //ici récupérer les données d'un autre fichier
+    var artistName = "kerryjames"; //ici récupérer les données d'un autre fichier
     var orelsanTimer = 0;
     var color = "rgb(44, 0, 255)";
     var scene;

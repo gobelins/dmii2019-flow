@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jardin imparfait</title>
+    <link rel="stylesheet" href="app/css/app.css">
+</head>
+<body class="isExpe">
+    <div  id="main" class="container">
+        <ul class="nav">
+            <li><img class="nav-logo" src="app/img/flow_small_white.png"></li>
+            <li><a href="#">partage</a><img class="nav-icon" src="app/img/nav-icon.png"></li>
+            <li><a href="#">instruction</a><img class="nav-icon" src="app/img/nav-icon.png"></li>
+            <li><a href="#">à propos</a></li>
+        </ul>
+
+        <ul class="info-artist">
+            <li class="name">Orelsan</li>
+            <li class="artist">Basique</li>
+        </ul>
+
+        <div class="block-end">
+            <a href="end.html">J'ai fini d'explorer <img src="app/img/go_arrow_white.png" alt=""></a>
+        </div>
+
+        <div class="expend-block">
+            <a href="e"><img src="app/img/arrow-expend.png" alt=""></a>
+        </div>
+    </div>
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../app/js/dat.gui.js"></script>
+    <script src="build/build.js"></script>
+
+    <!-- analytics -->
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        //marqueur Gobelins projets
+        ga('create', 'UA-34423251-3', 'auto', 'gobelins');
+        // dimensions personnalisées
+        ga('gobelins.set', 'dimension2', 'etudiant-design-interactif-web');
+        ga('gobelins.set', 'dimension3', 'DMII');
+        ga('gobelins.set', 'dimension5', 'WebGL Asterios');
+        ga('gobelins.set', 'dimension5', 'Flow');
+        ga('gobelins.set', 'dimension7', '2019');
+        ga('gobelins.set', 'dimension8', '2017-12-08');
+        ga('gobelins.send', 'pageview');
+    </script>
+</body>
+</html>
